@@ -4,8 +4,8 @@ Folder Structure
 
 ./
 ├─ 1_infrastructure
-│  └─ <your project>
+│  └─ <project>
 ├─ 2_automation
-│  └─ <your project>
+│  └─ <project>
 └─ 3_coding
-   └─ <your project>
+   └─ <project>
