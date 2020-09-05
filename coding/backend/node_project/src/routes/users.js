@@ -4,7 +4,7 @@ const router = express.Router();
 const User = mongoose.model("User");
 
 // get Profiles route
-router.get("/users", async (req, res) => {
+module.exports = router.get("/users", async (req, res) => {
   const id = req.params._id;
   User.find({})
     .then((data) => {

@@ -38,3 +38,5 @@ const userSchema = new mongoose.Schema({
     default: Date.now(),
   },
 });
+
+mongoose.model("User", userSchema);
