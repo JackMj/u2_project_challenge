@@ -8,7 +8,7 @@ const { mongoUrl } = require("./keys");
 require("./models/User");
 const requireToken = require("./middleware/requireToken");
 const authRoutes = require("./routes/authRoutes");
-const profile = require("./routes/profile");
+const profile = require("./routes/user");
 
 app.use(bodyParser.json());
 app.use(authRoutes, profile);
