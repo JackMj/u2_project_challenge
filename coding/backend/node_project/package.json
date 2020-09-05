@@ -1,0 +1,27 @@
+{
+  "name": "node_project",
+  "version": "1.0.0",
+  "description": "u2 node project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackMj/u2_project_challenge.git"
+  },
+  "author": "Muzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackMj/u2_project_challenge/issues"
+  },
+  "homepage": "https://github.com/JackMj/u2_project_challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.21",
+    "validator": "^13.1.1"
+  }
+}
