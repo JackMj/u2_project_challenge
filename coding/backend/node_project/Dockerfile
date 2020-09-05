@@ -11,7 +11,7 @@ COPY ./model /app/
 COPY ./routes /app/
 COPY ./keys /app/
 COPY ./package.json /app/
-COPY server.js /app/
+COPY ./server.js /app/
 
 EXPOSE 3000
 
