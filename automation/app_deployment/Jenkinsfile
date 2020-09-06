@@ -1,0 +1,35 @@
+/* groovylint-disable-next-line NglParseError */
+pipeline {
+    environment {
+    AAP_NAME = '2u_backend'
+    REGISTRY = 'hub.docker.com'
+    REGISTRYCREDENTIAL = 'docker_cred'
+    }
+    agent any
+    stages {
+        stage('Cloning Git') {
+            steps {
+                git 'https://github.com/JackMj/u2_project_challenge/'
+            }
+        }
+        stage('change to backend directory') {
+            steps {
+                dir("coding/backend/node_project") {
+                    sh "pwd"
+                }
+            }
+        }
+        stage('Install dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Install dependencies') {
+            steps {
+                withDockerRegistry(credentialsId: 'docker_id', url: 'https://index.docker.io/v1/') {
+            // some block
+                }
+            }
+        } 
+    }
+}
