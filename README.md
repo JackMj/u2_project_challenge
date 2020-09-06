@@ -57,3 +57,66 @@ kubectl version --short --client
 #aws ARN
 =========================================
 <sensitive keys>
+
+
+
+
+
+
+
+#automation
+=========================================
+this will spin up a kubernetes eks cluster with use of terraform and jenkins
+
+<root>/
+automation/
+kubernetes_terraform_cluster_setup/
+Jenkinsfile
+
+
+#Coding
+=======================================================
+
+#bacend
+===========
+this is a simple nodejs backend app that gets data from a mongodb database and expose the api to a frontend app 
+it has docker for file and the docker image get built by a jenkinsfile
+
+the pipeline will:
+
+1 build service
+2 run unit tests
+3 build docker image
+4 push image to a repository
+5 deploy service to kubernetes
+
+<root>/
+coding/backend/node_project
+
+
+
+
+#frontend
+===========
+this is a basic angular app that connects to an api exposed by a nodejs service
+this front application consists of a dockerfile  
+
+<root>/
+coding/backend/angular_project
+
+
+the pipeline will:
+
+1 build service
+2 run unit tests
+3 build docker image
+4 push image to a repository
+5 deploy service to kubernetes
+
+
+
+
+#infrastructure
+=========================================
+
+this will spin an ec2 instance 
