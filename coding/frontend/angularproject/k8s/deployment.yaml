@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: u2-frontend_app
-        image: muzij/frontend_app:40
+        image: muzij/frontend_app:latest
         imagePullPolicy: Always
         resources:
           limits:
