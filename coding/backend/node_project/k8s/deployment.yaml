@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind:apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  u2-backend_app
+  labels:
+    name:  u2-backend_app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: u2-backend_app
+  template:
+    metadata:
+      labels:
+        app: u2-backend_app
+    spec:
+      containers:
+      - name: u2-backend_app
+        image: muzij/backend_app:40
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "250m"
+            memory: "250Mi"
+          requests:
+            cpu: "150m"
+            memory: "150Mi"
+        evn:
+        - name: "dev"
+          value: "dev"
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: u2-backend_app
+spec:
+  selector:
+    app: u2-backend_app
+  ports:
+  - port: 4200
+    targetPort: 4200

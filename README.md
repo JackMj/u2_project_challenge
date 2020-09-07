@@ -77,7 +77,7 @@ Jenkinsfile
 #Coding
 =======================================================
 
-#bacend
+#Backend
 ===========
 this is a simple nodejs backend app that gets data from a mongodb database and expose the api to a frontend app 
 it has docker for file and the docker image get built by a jenkinsfile
@@ -119,4 +119,4 @@ the pipeline will:
 #infrastructure
 =========================================
 
-this will spin an ec2 instance 
+this will spin up an ec2 instance 

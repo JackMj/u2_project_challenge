@@ -1,0 +1,65 @@
+/* groovylint-disable-next-line NglParseError */
+pipeline {
+    environment {
+     registry = "muzij/u2-repo"
+     registryCredential = 'docker_id'
+     dockerImage = ''
+     projectName = 'U2_backend'
+    }
+    
+    agent any
+    stages {
+        stage('Cloning Git') {
+            steps {
+                git 'https://github.com/JackMj/u2_project_challenge/'
+            }
+        }
+        stage('build project') {
+            steps {
+                dir("coding/frontend/angularproject") {
+                    sh "pwd"
+                    sh "npm install"
+                }
+            }
+        }
+        stage('build project') {
+            steps {
+                dir("coding/frontend/angularproject") {
+                    sh "pwd"
+                    sh "npm install -g @angular/cli"
+                }
+            }
+        }
+         stage('run tests') {
+            steps {
+                dir("coding/frontend/angularproject") {
+                    sh "pwd"
+                    sh "ng test"
+                }
+            }
+        }
+        stage('build docker image') {
+            steps {
+                dir("coding/frontend/angularproject") {
+                    script {
+                    dockerImage = docker.build registry +":$BUILD_NUMBER"
+                  } 
+                }
+            }
+        }
+        stage('Deploy Image') {
+          steps{
+            script {
+              docker.withRegistry( '', registryCredential ) {
+                dockerImage.push()
+              }
+            }
+          }
+        }
+        stage('Remove Unused docker image') {
+          steps{
+            sh "docker rmi $registry:$BUILD_NUMBER"
+          }
+        }
+    }
+}

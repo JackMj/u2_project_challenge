@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "us-east-1"
-  access_key = "AKIASHGUTGNELO3A4VNV"
-  secret_key = "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"
+  access_key = "ACCESS_KEY_ID"
+  secret_key = "SECRET_ACCESS_KEY"
 }
 
 resource "aws_instance" "eks_cluster" {
