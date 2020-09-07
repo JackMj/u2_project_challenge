@@ -1,5 +1,4 @@
 apiVersion: apps/v1
-kind:apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name:  u2-backend_app
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
       - name: u2-backend_app
-        image: muzij/backend_app:40
+        image: muzij/u2-backend:latest
         imagePullPolicy: Always
         resources:
           limits:
