@@ -1,7 +1,7 @@
 provider "aws" {
   region     = "us-east-1"
-  access_key = "AKIAJ34JVFGRCYWQIOFQ"
-  secret_key = "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"
+  access_key = "<ACCESS_KEY_ID>"
+  secret_key = "<SECRET_KEY_ACCESS>"
 }
 
 # resource "aws_key_pair" "terraform-keys2" {
