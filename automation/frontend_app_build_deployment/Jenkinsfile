@@ -1,10 +1,10 @@
 /* groovylint-disable-next-line NglParseError */
 pipeline {
     environment {
-     registry = "muzij/u2-repo"
+     registry = "muzij/frontend_app"
      registryCredential = 'docker_id'
      dockerImage = ''
-     projectName = 'U2_backend'
+     projectName = 'frontend_app'
     }
     
     agent any
@@ -14,7 +14,7 @@ pipeline {
                 git 'https://github.com/JackMj/u2_project_challenge/'
             }
         }
-        stage('build project') {
+        stage('install dependencies') {
             steps {
                 dir("coding/frontend/angularproject") {
                     sh "pwd"
@@ -26,15 +26,7 @@ pipeline {
             steps {
                 dir("coding/frontend/angularproject") {
                     sh "pwd"
-                    sh "npm install -g @angular/cli"
-                }
-            }
-        }
-         stage('run tests') {
-            steps {
-                dir("coding/frontend/angularproject") {
-                    sh "pwd"
-                    sh "ng test"
+                    sh "ng build"
                 }
             }
         }

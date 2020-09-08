@@ -1,10 +1,10 @@
 /* groovylint-disable-next-line NglParseError */
 pipeline {
     environment {
-     registry = "muzij/u2-repo"
+     registry = "muzij/utwo-backend"
      registryCredential = 'docker_id'
      dockerImage = ''
-     projectName = 'U2_backend'
+     projectName = 'utwo-backend'
     }
     
     agent any
@@ -39,7 +39,7 @@ pipeline {
                 }
             }
         }
-        stage('Deploy Image') {
+        stage('push Image') {
           steps{
             script {
               docker.withRegistry( '', registryCredential ) {

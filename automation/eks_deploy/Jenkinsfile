@@ -1,0 +1,27 @@
+/* groovylint-disable-next-line NglParseError */
+pipeline {
+    agent any
+    stages {
+        stage('Cloning Git') {
+            steps {
+                git 'https://github.com/JackMj/u2_project_challenge/'
+            }
+        }
+        stage('deploy backend to kubernetes') {
+            steps {
+                dir("coding/backend/node_project") {
+                    sh "pwd"
+                    sh "kubectl -n default apply -f k8s/deployment.yaml"
+                }
+            }
+        }
+        stage('deploy frontend to kubernetes') {
+            steps {
+                dir("coding/frontend/angularproject") {
+                   sh "pwd"
+                   sh "kubectl -n default apply -f k8s/deployment.yaml"
+                }
+            }
+        }
+    }
+}

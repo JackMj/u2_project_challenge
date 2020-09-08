@@ -33,6 +33,7 @@ kind: Service
 metadata:
   name: u2-backend_app
 spec:
+  type: ClusterIP
   selector:
     app: u2-backend_app
   ports:
