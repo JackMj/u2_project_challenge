@@ -34,6 +34,18 @@ yum install docker -y
 #sudo service docker start
 sudo chkconfig docker on
 
+echo "Install nodejs"
+yum install nodejs12
+
+
+echo "Install Angular engine"
+npm install -g @angular/cli
+
+
+echo "Install bcryt"
+npm i bcrypt
+
+
 echo "Install Jenkins"
 wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
 rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
