@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: u2-backend_app
-        image: muzij/utwo-backend:latest
+        image: muzij/utwo-backend:60
         imagePullPolicy: Always
         resources:
           limits:
